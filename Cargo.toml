@@ -5,7 +5,7 @@ resolver = "2"
 
 [package]
 name = "warden"
-version = "0.18.0"
+version = "0.18.1"
 edition = "2021"
 rust-version = "1.95"
 description = "Host integrity scanner for macOS and Linux: persistence, backdoors, hardening risks"

@@ -1,0 +1,30 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="50%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <radialGradient id="lensGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.3"/>
+      <stop offset="70%" stop-color="#06b6d4" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="coreGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#22c55e"/>
+    </linearGradient>
+  </defs>
+  <circle cx="50" cy="46" r="38" stroke="#1e293b" stroke-width="2" stroke-dasharray="4 4" />
+  <path d="M50 8 C68 18, 84 20, 84 46 C84 68, 68 82, 50 92 C32 82, 16 68, 16 46 C16 20, 32 18, 50 8 Z" fill="#0b1329" fill-opacity="0.9" stroke="url(#shieldGrad)" stroke-width="4.5" stroke-linejoin="round" />
+  <path d="M50 18 L74 30 V50 C74 65, 62 76, 50 82 C38 76, 26 65, 26 50 V30 L50 18 Z" fill="none" stroke="#1e293b" stroke-width="2" stroke-linejoin="round" />
+  <path d="M50 46 L70 32 A 22 22 0 0 0 50 24 Z" fill="url(#lensGlow)" opacity="0.8" />
+  <circle cx="50" cy="46" r="22" fill="url(#lensGlow)" stroke="#1e293b" stroke-width="2" />
+  <circle cx="50" cy="46" r="16" stroke="#06b6d4" stroke-width="3" stroke-dasharray="24 6" stroke-linecap="round" />
+  <circle cx="50" cy="46" r="7" fill="url(#coreGrad)" />
+  <circle cx="50" cy="46" r="3" fill="#ffffff" />
+  <line x1="50" y1="16" x2="50" y2="21" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" />
+  <line x1="50" y1="71" x2="50" y2="76" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" />
+  <line x1="20" y1="46" x2="25" y2="46" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" />
+  <line x1="75" y1="46" x2="80" y2="46" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" />
+</svg>

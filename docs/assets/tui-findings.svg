@@ -9,7 +9,7 @@
 <g clip-path="url(#screen)">
 <rect x="16.0" y="56.0" width="1008.0" height="612.0" fill="#0B0E13"/>
 <rect x="16.00" y="56.00" width="126.00" height="18.00" fill="#2F6FE8"/>
-<text x="16.00" y="69.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#0B0E13" font-weight="600" xml:space="preserve"> Warden 0.18.0 </text>
+<text x="16.00" y="69.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#0B0E13" font-weight="600" xml:space="preserve"> Warden 0.18.1 </text>
 <text x="150.40" y="69.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#6BD98A" xml:space="preserve">2 findings · 1 critical · 1 high · 0 medium</text>
 <text x="16.00" y="87.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#9AA7BB" xml:space="preserve"> lab-mini · linux · unprivileged · 0 ms</text>
 <rect x="16.00" y="92.00" width="117.60" height="18.00" fill="#2F6FE8"/>

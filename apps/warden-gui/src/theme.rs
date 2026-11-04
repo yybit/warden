@@ -211,49 +211,38 @@ fn visuals(p: &Palette, theme: Theme) -> Visuals {
     v
 }
 
-/// A small shield mark used for the window icon and the top bar.
+/// Warden's app mark, decoded from the same PNG used by the UI and packagers.
 pub fn icon() -> egui::IconData {
-    const SIZE: usize = 64;
-    let mut rgba = vec![0u8; SIZE * SIZE * 4];
-    let accent = palette(Theme::Dark).accent;
-    let bg = palette(Theme::Dark).bg;
-
-    for y in 0..SIZE {
-        for x in 0..SIZE {
-            let i = (y * SIZE + x) * 4;
-            let (r, g, b) = if point_in_shield(x as f32, y as f32) {
-                (accent.r(), accent.g(), accent.b())
-            } else {
-                (bg.r(), bg.g(), bg.b())
-            };
-            rgba[i] = r;
-            rgba[i + 1] = g;
-            rgba[i + 2] = b;
-            rgba[i + 3] = 255;
-        }
-    }
-
+    let (width, height, rgba) = decode_png(include_bytes!("../assets/icon-64.png"));
     egui::IconData {
         rgba,
-        width: SIZE as u32,
-        height: SIZE as u32,
+        width,
+        height,
     }
 }
 
-fn point_in_shield(x: f32, y: f32) -> bool {
-    // A simple heraldic shield: rectangular shoulders and a triangular point.
-    let left = 14.0;
-    let right = 50.0;
-    let top = 8.0;
-    let shoulder = 40.0;
-    if y < top || y > 58.0 || x < left || x > right {
-        return false;
-    }
-    if y <= shoulder {
-        return true;
-    }
-    let t = (y - shoulder) / (58.0 - shoulder);
-    let half = (right - left) * 0.5 * (1.0 - t);
-    let center = (left + right) * 0.5;
-    (x - center).abs() <= half
+/// A texture for the in-app header and welcome screen. Loaded once per context.
+pub fn logo_texture(ctx: &egui::Context) -> egui::TextureHandle {
+    let (width, height, rgba) = decode_png(include_bytes!("../assets/icon-256.png"));
+    let image = egui::ColorImage::from_rgba_unmultiplied([width as usize, height as usize], &rgba);
+    ctx.load_texture("warden-logo", image, egui::TextureOptions::LINEAR)
+}
+
+fn decode_png(bytes: &[u8]) -> (u32, u32, Vec<u8>) {
+    let decoder = png::Decoder::new(std::io::Cursor::new(bytes));
+    let mut reader = decoder.read_info().expect("embedded app icon is valid PNG");
+    let mut buffer = vec![0; reader.output_buffer_size().expect("embedded icon size")];
+    let info = reader
+        .next_frame(&mut buffer)
+        .expect("embedded app icon has a frame");
+    assert_eq!(
+        info.color_type,
+        png::ColorType::Rgba,
+        "embedded app icon must be RGBA"
+    );
+    (
+        info.width,
+        info.height,
+        buffer[..info.buffer_size()].to_vec(),
+    )
 }

@@ -27,6 +27,8 @@ by the scan engine in English; raw evidence should remain verbatim. Full report
 localization needs i18n keys and format arguments in the findings, and is not
 implemented yet.
 
+![Warden Checks view](assets/gui-checks.png)
+
 The desktop app is read-only. It does **not** include the sandbox, does not
 execute scanned code, and never remediates automatically. Use the CLI for
 `sandbox run/fetch`.

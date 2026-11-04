@@ -78,6 +78,7 @@ pub struct WardenApp {
     about: bool,
     toast: Option<Toast>,
     applied_theme: Option<Theme>,
+    logo: Option<egui::TextureHandle>,
 }
 
 impl WardenApp {
@@ -128,6 +129,7 @@ impl WardenApp {
             about: false,
             toast: None,
             applied_theme: None,
+            logo: None,
         }
     }
 
@@ -394,8 +396,9 @@ impl WardenApp {
             )
             .show(ui, |ui| {
                 ui.horizontal(|ui| {
-                    let (rect, _) = ui.allocate_exact_size(Vec2::new(24.0, 28.0), Sense::hover());
-                    paint_shield(ui, rect, p.accent);
+                    if let Some(logo) = &self.logo {
+                        ui.add(egui::Image::new(logo).fit_to_exact_size(Vec2::splat(28.0)));
+                    }
                     ui.add_space(2.0);
                     ui.label(RichText::new("WARDEN").size(18.0).strong().color(p.text));
                     ui.label(
@@ -793,8 +796,9 @@ impl WardenApp {
         let mut start = false;
         ui.add_space(24.0);
         ui.vertical_centered(|ui| {
-            let (rect, _) = ui.allocate_exact_size(Vec2::splat(76.0), Sense::hover());
-            paint_shield(ui, rect, p.accent);
+            if let Some(logo) = &self.logo {
+                ui.add(egui::Image::new(logo).fit_to_exact_size(Vec2::splat(96.0)));
+            }
             ui.add_space(14.0);
             ui.label(
                 RichText::new(t(
@@ -1458,6 +1462,9 @@ impl WardenApp {
             theme::apply(&ctx, self.theme);
             self.applied_theme = Some(self.theme);
         }
+        if self.logo.is_none() {
+            self.logo = Some(theme::logo_texture(&ctx));
+        }
 
         self.top_bar(ui);
         self.sidebar(ui);
@@ -1734,27 +1741,6 @@ fn scanning(ui: &mut Ui, p: &Palette, lang: Lang, started: &Instant) {
     });
 }
 
-fn paint_shield(ui: &mut Ui, rect: egui::Rect, color: Color32) {
-    let w = rect.width();
-    let h = rect.height();
-    let left = rect.left() + w * 0.18;
-    let right = rect.right() - w * 0.18;
-    let top = rect.top() + h * 0.10;
-    let shoulder = rect.top() + h * 0.55;
-    let bottom = rect.top() + h * 0.92;
-    ui.painter().add(egui::Shape::convex_polygon(
-        vec![
-            egui::pos2(left, top),
-            egui::pos2(right, top),
-            egui::pos2(right, shoulder),
-            egui::pos2(rect.center().x, bottom),
-            egui::pos2(left, shoulder),
-        ],
-        color,
-        Stroke::NONE,
-    ));
-}
-
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -1764,7 +1750,7 @@ mod tests {
     fn sample_report() -> Report {
         Report {
             tool: "warden".into(),
-            version: "0.18.0".into(),
+            version: "0.18.1".into(),
             host: HostInfo {
                 hostname: "lab-mini".into(),
                 os: "linux".into(),

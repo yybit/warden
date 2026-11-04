@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="apps/warden-gui/assets/icon.png" width="96" alt="Warden icon" />
+<img src="assets/warden-logo.svg" width="96" alt="Warden icon" />
 
 # Warden
 
