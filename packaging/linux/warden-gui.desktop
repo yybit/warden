@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Warden
+GenericName=Host Security Scanner
+Comment=Read-only persistence, privilege, listener, and signature scanner
+Exec=warden-gui
+Icon=warden-gui
+Terminal=false
+Categories=System;Security;
+Keywords=security;scanner;persistence;malware;hardening;
+StartupWMClass=warden

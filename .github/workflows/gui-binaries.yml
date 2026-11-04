@@ -1,0 +1,71 @@
+name: gui-binaries
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  linux:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: ubuntu-24.04
+            arch: x86_64
+            test: true
+          - runner: ubuntu-24.04-arm
+            arch: aarch64
+            test: false
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Windowing dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libxkbcommon-dev libxkbcommon-x11-dev libwayland-dev libgl1-mesa-dri libegl1
+      - name: Test headless UI
+        if: matrix.test
+        run: WGPU_BACKEND=gl cargo test -p warden-gui
+      - name: Package
+        run: scripts/package-linux-gui.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: gui-linux-${{ matrix.arch }}
+          path: dist/Warden-*-linux-*.tar.gz*
+      - name: Attach to release
+        if: github.event_name == 'release'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release upload "${GITHUB_REF_NAME}" dist/Warden-*-linux-*.tar.gz* --clobber
+
+  macos:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: macos-13
+            arch: x86_64
+          - runner: macos-14
+            arch: aarch64
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Package app
+        run: packaging/macos/package-gui.sh --arch ${{ matrix.arch }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: gui-macos-${{ matrix.arch }}
+          path: dist/Warden-*-macos-${{ matrix.arch }}.zip*
+      - name: Attach to release
+        if: github.event_name == 'release'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release upload "${GITHUB_REF_NAME}" dist/Warden-*-macos-${{ matrix.arch }}.zip* --clobber

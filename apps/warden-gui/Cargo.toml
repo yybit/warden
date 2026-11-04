@@ -1,0 +1,19 @@
+[package]
+name = "warden-gui"
+version = "0.18.0"
+edition = "2021"
+rust-version = "1.95"
+description = "Warden desktop app: macOS / Linux host security scanner"
+license = "MIT"
+repository = "https://github.com/yybit/warden"
+
+[dependencies]
+egui = "0.36"
+eframe = "0.36"
+env_logger = "0.11"
+log = "0.4"
+rfd = "0.17"
+warden = { path = "../.." }
+
+[dev-dependencies]
+egui_kittest = { version = "0.36", features = ["wgpu", "snapshot", "x11"] }
