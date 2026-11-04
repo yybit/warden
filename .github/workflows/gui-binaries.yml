@@ -3,6 +3,13 @@ name: gui-binaries
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - 'website/**'
+      - 'README*'
+      - 'docs/**'
+      - 'assets/**'
+      - 'LICENSE'
+      - '.github/workflows/pages.yml'
   workflow_dispatch:
   release:
     types: [published]

@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Warden — host security scanner for macOS and Linux</title>
+  <meta name="description" content="Warden is a read-only host security scanner for macOS and Linux: persistence, privilege, listeners, signatures, and supply-chain risk, with a native GUI, TUI, CLI, and Linux sandbox.">
+  <meta name="theme-color" content="#070b10">
+  <meta property="og:title" content="Warden — host security scanner">
+  <meta property="og:description" content="Read-only persistence, privilege, listener, and signature scanning for macOS and Linux.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/gui-findings.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/warden-logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="./">
+        <img src="assets/warden-logo.svg" alt="" width="34" height="34">
+        <span>WARDEN</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#features" data-i18n="nav_features">Features</a>
+        <a href="#screenshots" data-i18n="nav_screenshots">Screenshots</a>
+        <a href="#download" data-i18n="nav_download">Download</a>
+        <a href="#docs" data-i18n="nav_docs">Docs</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch language">中文</button>
+        <a class="btn btn-small btn-ghost" data-github-link href="https://github.com/yybit/warden" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="pulse"></span><span data-i18n="hero_eyebrow">OPEN SOURCE · READ-ONLY</span></p>
+          <h1>
+            <span data-i18n="hero_title_1">See what this</span><br>
+            <span class="gradient-text" data-i18n="hero_title_2">host is hiding.</span>
+          </h1>
+          <p class="lede" data-i18n="hero_lede">Warden audits the places attackers actually use to stay on a Unix host — persistence, privilege, listeners, packages, and signatures — with evidence for every finding.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://github.com/yybit/warden/releases/latest" target="_blank" rel="noreferrer" data-i18n="hero_download">Download</a>
+            <a class="btn btn-ghost" href="https://github.com/yybit/warden" target="_blank" rel="noreferrer" data-i18n="hero_github">View source</a>
+          </div>
+          <ul class="hero-points">
+            <li data-i18n="hero_point_1">Native GUI + TUI + CLI</li>
+            <li data-i18n="hero_point_2">24 high-signal checks</li>
+            <li data-i18n="hero_point_3">No auto-remediation</li>
+          </ul>
+        </div>
+        <div class="hero-visual">
+          <div class="window">
+            <div class="window-bar"><span></span><span></span><span></span><em>Warden — Findings</em></div>
+            <img src="assets/gui-findings.png" alt="Warden desktop app showing findings and evidence" width="1280" height="820">
+          </div>
+          <div class="visual-glow"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker" data-i18n="features_kicker">WHAT IT DOES</p>
+          <h2 data-i18n="features_title">High-signal evidence, not signature noise.</h2>
+          <p data-i18n="features_lede">Built for the moments after an incident, before a reboot, or whenever an installer asks for sudo.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="card feature">
+            <span class="icon icon-green" aria-hidden="true">◎</span>
+            <h3 data-i18n="feature_persistence_title">Persistence audit</h3>
+            <p data-i18n="feature_persistence_body">Cron, systemd, launchd, shell rc, PAM, udev, at, SSH keys, and dynamic-loader hooks.</p>
+          </article>
+          <article class="card feature">
+            <span class="icon icon-cyan" aria-hidden="true">↗</span>
+            <h3 data-i18n="feature_privilege_title">Privilege surface</h3>
+            <p data-i18n="feature_privilege_body">SUID/SGID, file capabilities, writable PATH entries, sudoers, and account configuration.</p>
+          </article>
+          <article class="card feature">
+            <span class="icon icon-blue" aria-hidden="true">⌁</span>
+            <h3 data-i18n="feature_listeners_title">Listeners &amp; processes</h3>
+            <p data-i18n="feature_listeners_body">Deleted executables, temp-directory daemons, unusual low-port bindings, and missing binaries.</p>
+          </article>
+          <article class="card feature">
+            <span class="icon icon-yellow" aria-hidden="true">⌘</span>
+            <h3 data-i18n="feature_supply_title">Supply chain</h3>
+            <p data-i18n="feature_supply_body">OSV vulnerabilities, known-malicious npm/PyPI/crates packages, package integrity, IOC feeds, YARA-X, and ClamAV.</p>
+          </article>
+          <article class="card feature">
+            <span class="icon icon-magenta" aria-hidden="true">◇</span>
+            <h3 data-i18n="feature_coverage_title">Coverage is first-class</h3>
+            <p data-i18n="feature_coverage_body">Every check reports ran, skipped, or failed — and why. “Not checked” never looks like “clean”.</p>
+          </article>
+          <article class="card feature">
+            <span class="icon icon-red" aria-hidden="true">⊘</span>
+            <h3 data-i18n="feature_sandbox_title">Linux sandbox</h3>
+            <p data-i18n="feature_sandbox_body">Run an untrusted installer offline, diff the filesystem, and score what it actually changed.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="screenshots">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker" data-i18n="shots_kicker">ONE REPORT, THREE SURFACES</p>
+          <h2 data-i18n="shots_title">Choose the window that fits the job.</h2>
+          <p data-i18n="shots_lede">The GUI, terminal UI, and CLI share the same engine and report model. No second implementation of the checks.</p>
+        </div>
+        <div class="shot-grid">
+          <figure class="shot">
+            <div class="window compact">
+              <div class="window-bar"><span></span><span></span><span></span><em>Warden — TUI</em></div>
+              <img src="assets/tui-findings.png" alt="Warden terminal UI showing findings and detail" width="1560" height="1026" loading="lazy">
+            </div>
+            <figcaption data-i18n="shots_tui">Terminal UI — findings, evidence, and the full checks/coverage view.</figcaption>
+          </figure>
+          <figure class="shot">
+            <div class="window compact">
+              <div class="window-bar"><span></span><span></span><span></span><em>Warden — Checks</em></div>
+              <img src="assets/gui-checks.png" alt="Warden desktop app showing check coverage" width="1280" height="820" loading="lazy">
+            </div>
+            <figcaption data-i18n="shots_checks">Coverage — every selected check, including skipped checks and the exact reason.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="download">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker" data-i18n="download_kicker">GET WARDEN</p>
+          <h2 data-i18n="download_title">Native on both platforms.</h2>
+          <p data-i18n="download_lede">CLI and GUI packages are built by GitHub Actions for x86_64 and aarch64. Pick your platform, or browse the latest release.</p>
+        </div>
+        <div class="download-grid">
+          <article class="card download-card">
+            <span class="platform-tag">macOS</span>
+            <h3>Apple Silicon</h3>
+            <p class="mono">aarch64</p>
+            <a class="btn btn-primary btn-wide" data-asset="Warden-*-macos-aarch64.zip" href="https://github.com/yybit/warden/releases/latest" target="_blank" rel="noreferrer" data-i18n="download_gui">GUI .zip</a>
+            <a class="text-link" data-asset="warden-*-macos-aarch64" href="https://github.com/yybit/warden/releases/latest" target="_blank" rel="noreferrer" data-i18n="download_cli">CLI binary</a>
+          </article>
+          <article class="card download-card">
+            <span class="platform-tag">macOS</span>
+            <h3>Intel</h3>
+            <p class="mono">x86_64</p>
+            <a class="btn btn-primary btn-wide" data-asset="Warden-*-macos-x86_64.zip" href="https://github.com/yybit/warden/releases/latest" target="_blank" rel="noreferrer" data-i18n="download_gui">GUI .zip</a>
+            <a class="text-link" data-asset="warden-*-macos-x86_64" href="https://github.com/yybit/warden/releases/latest" target="_blank" rel="noreferrer" data-i18n="download_cli">CLI binary</a>
+          </article>
+          <article class="card download-card">
+            <span class="platform-tag">Linux</span>
+            <h3>x86_64</h3>
+            <p class="mono">glibc · X11 / Wayland</p>
+            <a class="btn btn-primary btn-wide" data-asset="Warden-*-linux-x86_64.tar.gz" href="https://github.com/yybit/warden/releases/latest" target="_blank" rel="noreferrer" data-i18n="download_gui">GUI .tar.gz</a>
+            <a class="text-link" data-asset="warden-*-linux-x86_64" href="https://github.com/yybit/warden/releases/latest" target="_blank" rel="noreferrer" data-i18n="download_cli">CLI binary</a>
+          </article>
+          <article class="card download-card">
+            <span class="platform-tag">Linux</span>
+            <h3>aarch64</h3>
+            <p class="mono">glibc · X11 / Wayland</p>
+            <a class="btn btn-primary btn-wide" data-asset="Warden-*-linux-aarch64.tar.gz" href="https://github.com/yybit/warden/releases/latest" target="_blank" rel="noreferrer" data-i18n="download_gui">GUI .tar.gz</a>
+            <a class="text-link" data-asset="warden-*-linux-aarch64" href="https://github.com/yybit/warden/releases/latest" target="_blank" rel="noreferrer" data-i18n="download_cli">CLI binary</a>
+          </article>
+        </div>
+        <p class="download-note">
+          <span data-i18n="download_note">macOS builds are ad-hoc signed. If Gatekeeper blocks the app, run:</span>
+          <code>xattr -dr com.apple.quarantine Warden.app &amp;&amp; codesign --force --sign - Warden.app</code>
+        </p>
+        <div class="center-actions">
+          <a class="btn btn-ghost" href="https://github.com/yybit/warden/releases/latest" target="_blank" rel="noreferrer" data-i18n="download_all">All releases &amp; checksums</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="install">
+      <div class="container install-grid">
+        <div>
+          <p class="kicker" data-i18n="install_kicker">FROM SOURCE</p>
+          <h2 data-i18n="install_title">Three commands to a first scan.</h2>
+          <p class="muted" data-i18n="install_lede">Rust 1.95+. The CLI and TUI need no runtime dependencies; the GUI needs a desktop session.</p>
+          <div class="install-links">
+            <a class="text-link" href="https://github.com/yybit/warden/blob/main/docs/USAGE.md" target="_blank" rel="noreferrer" data-i18n="install_cli_docs">CLI reference →</a>
+            <a class="text-link" href="https://github.com/yybit/warden/blob/main/docs/GUI.md" target="_blank" rel="noreferrer" data-i18n="install_gui_docs">Desktop guide →</a>
+          </div>
+        </div>
+        <div class="card code-card">
+          <pre><code><span class="c"># clone</span>
+git clone https://github.com/yybit/warden.git
+cd warden
+
+<span class="c"># scan</span>
+cargo build --release
+sudo ./target/release/warden scan
+
+<span class="c"># desktop app</span>
+cargo run --release -p warden-gui
+
+<span class="c"># terminal UI</span>
+./target/release/warden scan --tui</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="docs">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker" data-i18n="docs_kicker">READ THE DETAILS</p>
+          <h2 data-i18n="docs_title">Documentation, not marketing.</h2>
+        </div>
+        <div class="doc-grid">
+          <a class="card doc-card" href="https://github.com/yybit/warden/blob/main/docs/USAGE.md" target="_blank" rel="noreferrer">
+            <span class="doc-arrow" aria-hidden="true">↗</span>
+            <h3 data-i18n="doc_usage_title">CLI reference</h3>
+            <p data-i18n="doc_usage_body">Commands, checks, output formats, baselines, allowlists, and sandbox usage.</p>
+          </a>
+          <a class="card doc-card" href="https://github.com/yybit/warden/blob/main/docs/GUI.md" target="_blank" rel="noreferrer">
+            <span class="doc-arrow" aria-hidden="true">↗</span>
+            <h3 data-i18n="doc_gui_title">Desktop app</h3>
+            <p data-i18n="doc_gui_body">Build, packaging, privileges, architecture, and visual tests.</p>
+          </a>
+          <a class="card doc-card" href="https://github.com/yybit/warden/blob/main/docs/DESIGN.md" target="_blank" rel="noreferrer">
+            <span class="doc-arrow" aria-hidden="true">↗</span>
+            <h3 data-i18n="doc_design_title">Design &amp; threat model</h3>
+            <p data-i18n="doc_design_body">Architecture, scope, coverage philosophy, and the roadmap.</p>
+          </a>
+          <a class="card doc-card" href="https://github.com/yybit/warden/blob/main/docs/SIGNATURES.md" target="_blank" rel="noreferrer">
+            <span class="doc-arrow" aria-hidden="true">↗</span>
+            <h3 data-i18n="doc_signatures_title">Signature sources</h3>
+            <p data-i18n="doc_signatures_body">YARA, ClamAV, IOC feeds, OSV, and the licensing trade-offs.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="./">
+          <img src="assets/warden-logo.svg" alt="" width="28" height="28">
+          <span>WARDEN</span>
+        </a>
+        <p class="muted" data-i18n="footer_tagline">Read-only host security for macOS and Linux.</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/yybit/warden" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://github.com/yybit/warden/releases/latest" target="_blank" rel="noreferrer" data-i18n="nav_download">Download</a>
+        <a href="https://github.com/yybit/warden/blob/main/LICENSE" target="_blank" rel="noreferrer">MIT</a>
+      </div>
+      <p class="muted small" data-i18n="footer_note">Not an antivirus. No auto-remediation. Evidence over family names.</p>
+    </div>
+  </footer>
+</body>
+</html>
