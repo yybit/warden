@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="684" viewBox="0 0 1040 684">
+<defs><clipPath id="screen"><rect x="0" y="0" width="100%" height="100%" rx="14"/></clipPath></defs>
+<rect width="100%" height="100%" rx="14" fill="#0B0E13"/>
+<rect x="0" y="0" width="100%" height="42.0" fill="#161B23"/>
+<circle cx="22" cy="21.0" r="6" fill="#F85B51"/>
+<circle cx="44" cy="21.0" r="6" fill="#E8C45A"/>
+<circle cx="66" cy="21.0" r="6" fill="#6BD98A"/>
+<text x="92" y="25.0" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="12" fill="#9AA7BB">warden scan --tui  ·  lab-mini</text>
+<g clip-path="url(#screen)">
+<rect x="16.0" y="56.0" width="1008.0" height="612.0" fill="#0B0E13"/>
+<rect x="16.00" y="56.00" width="126.00" height="18.00" fill="#2F6FE8"/>
+<text x="16.00" y="69.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#0B0E13" font-weight="600" xml:space="preserve"> Warden 0.18.0 </text>
+<text x="150.40" y="69.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#6BD98A" xml:space="preserve">2 findings · 1 critical · 1 high · 0 medium</text>
+<text x="16.00" y="87.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#9AA7BB" xml:space="preserve"> lab-mini · linux · unprivileged · 0 ms</text>
+<rect x="16.00" y="92.00" width="117.60" height="18.00" fill="#2F6FE8"/>
+<text x="16.00" y="105.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#0B0E13" font-weight="600" xml:space="preserve"> Findings (2) </text>
+<text x="133.60" y="105.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" xml:space="preserve">  Checks (1) </text>
+<text x="242.80" y="105.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#6BD98A" xml:space="preserve">   1 ran · 0 skipped · 0 failed</text>
+<text x="16.00" y="123.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" xml:space="preserve">────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────</text>
+<text x="16.00" y="141.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" xml:space="preserve">┌ Findings (2) ──────────────────────────────────────┐┌ Finding detail ────────────────────────────────────────────────┐</text>
+<rect x="24.40" y="146.00" width="436.80" height="18.00" fill="#354154"/>
+<text x="16.00" y="159.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" xml:space="preserve">│</text>
+<text x="24.40" y="159.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" font-weight="600" xml:space="preserve">&gt; </text>
+<text x="41.20" y="159.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#FF6B66" font-weight="600" xml:space="preserve">CRITICAL</text>
+<text x="116.80" y="159.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#9AA7BB" font-weight="600" xml:space="preserve">host.accounts</text>
+<text x="226.00" y="159.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" font-weight="600" xml:space="preserve">  Account has no password an</text>
+<text x="461.20" y="159.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" xml:space="preserve">││</text>
+<text x="478.00" y="159.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#FF6B66" font-weight="600" xml:space="preserve">CRITICAL </text>
+<text x="553.60" y="159.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#9AA7BB" xml:space="preserve">host.accounts · confidence Certain</text>
+<text x="839.20" y="159.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" xml:space="preserve">                     │</text>
+<text x="16.00" y="177.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" xml:space="preserve">│  </text>
+<text x="41.20" y="177.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#F85B51" font-weight="600" xml:space="preserve">HIGH    </text>
+<text x="116.80" y="177.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#9AA7BB" xml:space="preserve">host.accounts</text>
+<text x="226.00" y="177.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" xml:space="preserve">  Passwordless sudo rule    ││</text>
+<text x="478.00" y="177.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" font-weight="600" xml:space="preserve">Account has no password and PAM allows null passwords</text>
+<text x="923.20" y="177.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" xml:space="preserve">           │</text>
+<text x="16.00" y="195.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" xml:space="preserve">│                                                    ││</text>
+<text x="478.00" y="195.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#3DD6D0" xml:space="preserve">/etc/shadow:1</text>
+<text x="587.20" y="195.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" xml:space="preserve">                                                   │</text>
+<text x="16.00" y="213.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" xml:space="preserve">│                                                    ││                                                                │</text>
+<text x="16.00" y="231.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" xml:space="preserve">│                                                    ││`root` has an empty hash; `nullok` in /etc/pam.d/system-auth    │</text>
+<text x="16.00" y="249.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" xml:space="preserve">│                                                    ││lets local login/console authenticate without a password (SSH   │</text>
+<text x="16.00" y="267.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" xml:space="preserve">│                                                    ││service settings may still block it)                            │</text>
+<text x="16.00" y="285.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" xml:space="preserve">│                                                    ││                                                                │</text>
+<text x="16.00" y="303.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" xml:space="preserve">│                                                    ││</text>
+<text x="478.00" y="303.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#9AA7BB" xml:space="preserve">$ evidence</text>
+<text x="562.00" y="303.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" xml:space="preserve">                                                      │</text>
+<text x="16.00" y="321.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" xml:space="preserve">│                                                    ││root::… pam_nullok=true                                         │</text>
+<text x="16.00" y="339.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" xml:space="preserve">│                                                    ││                                                                │</text>
+<text x="16.00" y="357.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" xml:space="preserve">│                                                    ││</text>
+<text x="478.00" y="357.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#9AA7BB" xml:space="preserve">$ remediation</text>
+<text x="587.20" y="357.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" xml:space="preserve">                                                   │</text>
+<text x="16.00" y="375.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" xml:space="preserve">│                                                    ││Set a password or lock the account; remove nullok if it is not  │</text>
+<text x="16.00" y="393.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" xml:space="preserve">│                                                    ││required                                                        │</text>
+<text x="16.00" y="411.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" xml:space="preserve">│                                                    ││                                                                │</text>
+<text x="16.00" y="429.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" xml:space="preserve">│                                                    ││</text>
+<text x="478.00" y="429.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#D58CFF" xml:space="preserve">ATT&amp;CK T1078</text>
+<text x="578.80" y="429.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" xml:space="preserve">                                                    │</text>
+<text x="16.00" y="447.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" xml:space="preserve">│                                                    ││                                                                │</text>
+<text x="16.00" y="465.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" xml:space="preserve">│                                                    ││</text>
+<text x="478.00" y="465.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#9AA7BB" xml:space="preserve">Enter: inspect the check behind this finding</text>
+<text x="847.60" y="465.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" xml:space="preserve">                    │</text>
+<text x="16.00" y="483.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" xml:space="preserve">│                                                    ││                                                                │</text>
+<text x="16.00" y="501.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" xml:space="preserve">│                                                    ││                                                                │</text>
+<text x="16.00" y="519.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" xml:space="preserve">│                                                    ││                                                                │</text>
+<text x="16.00" y="537.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" xml:space="preserve">│                                                    ││                                                                │</text>
+<text x="16.00" y="555.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" xml:space="preserve">│                                                    ││                                                                │</text>
+<text x="16.00" y="573.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" xml:space="preserve">│                                                    ││                                                                │</text>
+<text x="16.00" y="591.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" xml:space="preserve">│                                                    ││                                                                │</text>
+<text x="16.00" y="609.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" xml:space="preserve">└────────────────────────────────────────────────────┘└────────────────────────────────────────────────────────────────┘</text>
+<text x="16.00" y="627.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#DCE3EE" xml:space="preserve">────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────</text>
+<text x="16.00" y="645.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#9AA7BB" xml:space="preserve">2 findings · checks 1: 1 ran / 0 skipped / 0 failed</text>
+<text x="16.00" y="663.00" font-family="DejaVu Sans Mono, Menlo, monospace" font-size="14" fill="#3DD6D0" xml:space="preserve">Tab view · q quit · j/k move · / filter · Enter cross-ref · ? help</text>
+</g></svg>
